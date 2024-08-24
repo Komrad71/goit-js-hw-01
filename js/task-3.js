@@ -26,10 +26,22 @@ console.log(getElementWidth("200px", "0px", "0px")); // 200
 /* #endregion */
 'use strict';
 function getElementWidth(content, padding, border) {
-  content = Number.parseFloat(content);
+  const contentSize = parseFloat(content);
+  const paddingSize = parseFloat(padding);
+  const borderSize = parseFloat(border);
+
+  const totalSize = contentSize + 2 * paddingSize + 2 * borderSize;
+
+  return totalSize;
+
+
+  /* content = Number.parseFloat(content);
   padding = Number.parseFloat(padding);
   border = Number.parseFloat(border);
-  return content + 2*padding +2*border;
+  return content + 2*padding +2*border; */
+
+  /* let totalSize = content + 2*padding +2*border;
+  return `${totalSize}`; */
 }
 
 /* #region Перевірка роботи функції */
